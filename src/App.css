@@ -1,38 +1,101 @@
-.App {
-  text-align: center;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*
+{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body 
+{
+  width: 100vw;
+  overflow-x: hidden;
+  margin: 2rem 0;
+  background-color: black;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+a div
+{
+  text-decoration: none;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.container 
+{
+  width: 90vw;
+  max-width: 1280px;
+  min-height: 720px;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap:1rem;
+  /* align-items: flex-start; */
+}
+
+
+.each-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.each-card h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.7rem;
+}
+
+.each-card p {
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.each-card .find-more {
+    /* display: block; */
+    text-align: left;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+.each-card .find-more:hover {
+    text-decoration: underline;
+}
+
+.each-card:hover 
+{
+  transform: scale(1.05);
+  transition: transform 0.5s ease;
+}
+
+.find-more 
+{
+  color: #8080ff;
+}
+
+@media(max-width:768px)
+{
+    .each-card h2 {
+      font-size: 1.15rem;
+      margin-bottom: 0.5rem;
   }
-  to {
-    transform: rotate(360deg);
+  .each-card p {
+      color: #666;
+      margin-bottom: 0.2rem;
+  }
+  .each-card:hover 
+  {
+    transform: scale(1.03);
+    transition: transform 0.5s ease;
   }
 }
+
+
+
+
